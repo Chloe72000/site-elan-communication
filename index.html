@@ -241,6 +241,9 @@
     color: var(--cream);
     max-width: 100%;
     margin-bottom: 1.75rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
   }
 
   .hero-line {
@@ -379,6 +382,9 @@
     letter-spacing: -0.02em;
     color: var(--cream);
     margin-bottom: 1rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
   }
 
   h2 em { font-style: normal; color: var(--rose-light); }
@@ -928,7 +934,7 @@
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
-    .hero-line { display: inline; white-space: normal; }
+    .hero-line { white-space: normal; overflow-wrap: break-word; word-break: break-word; }
     nav { padding: 1rem 1.25rem; }
     .hero { padding: 6rem 1.25rem 4rem; }
     section { padding: 4rem 1.25rem; }
