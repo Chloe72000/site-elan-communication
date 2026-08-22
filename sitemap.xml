@@ -17,12 +17,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://chloefortune.com/contenu-ugc.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://chloefortune.com/audit.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chloefortune.com/print.html</loc>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chloefortune.com/blog.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chloefortune.com/blog-communication-artisans-le-mans.html</loc>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://chloefortune.com/realisations.html</loc>
