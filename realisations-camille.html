@@ -1525,6 +1525,15 @@
   @media (max-width: 600px) {
     .video-card, .video-frame { width: 160px; }
   }
+
+  .video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
 </style>
 </head>
 
@@ -1676,6 +1685,8 @@
 <div class="section-divider"></div>
 
 <!-- VIDEOS REALISEES POUR UNE CLIENTE -->
+<!-- Les 5 iframes ci-dessous pointent vers des ID YouTube placeholder (REMPLACE_ID_...). -->
+<!-- Remplacer chaque ID par le vrai ID de la vidéo YouTube "non répertoriée" une fois uploadée. -->
 <section>
   <div class="container fade-in visible">
     <div class="section-label">Vidéos</div>
@@ -1685,50 +1696,45 @@
     <div class="video-showcase-grid">
 
       <div class="video-card">
+        <!-- Remplace REMPLACE_ID_routine-dos par l'ID de la vidéo YouTube (dans l'URL après watch?v= ou après youtu.be/) -->
         <div class="video-frame">
-          <video controls playsinline preload="metadata" poster="img/reel-routine-dos-poster.png">
-            <source src="video/reel-routine-dos.mp4" type="video/mp4">
-          </video>
+          <iframe src="https://www.youtube.com/embed/REMPLACE_ID_routine-dos" title="Routine dos — Camille" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-card-title">Routine dos</div>
         <div class="video-card-caption">Camille</div>
       </div>
 
       <div class="video-card">
+        <!-- Remplace REMPLACE_ID_invitation-ralentir par l'ID de la vidéo YouTube (dans l'URL après watch?v= ou après youtu.be/) -->
         <div class="video-frame">
-          <video controls playsinline preload="metadata" poster="img/reel-invitation-ralentir-poster.png">
-            <source src="video/reel-invitation-ralentir.mp4" type="video/mp4">
-          </video>
+          <iframe src="https://www.youtube.com/embed/REMPLACE_ID_invitation-ralentir" title="Invitation à ralentir — Camille" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-card-title">Invitation à ralentir</div>
         <div class="video-card-caption">Camille</div>
       </div>
 
       <div class="video-card">
+        <!-- Remplace REMPLACE_ID_yoga-aller-mieux par l'ID de la vidéo YouTube (dans l'URL après watch?v= ou après youtu.be/) -->
         <div class="video-frame">
-          <video controls playsinline preload="metadata" poster="img/reel-yoga-aller-mieux-poster.png">
-            <source src="video/reel-yoga-aller-mieux.mp4" type="video/mp4">
-          </video>
+          <iframe src="https://www.youtube.com/embed/REMPLACE_ID_yoga-aller-mieux" title="Le yoga pour aller mieux — Camille" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-card-title">Le yoga pour aller mieux</div>
         <div class="video-card-caption">Camille</div>
       </div>
 
       <div class="video-card">
+        <!-- Remplace REMPLACE_ID_yoga-apporte par l'ID de la vidéo YouTube (dans l'URL après watch?v= ou après youtu.be/) -->
         <div class="video-frame">
-          <video controls playsinline preload="metadata" poster="img/reel-yoga-apporte-poster.png">
-            <source src="video/reel-yoga-apporte.mp4" type="video/mp4">
-          </video>
+          <iframe src="https://www.youtube.com/embed/REMPLACE_ID_yoga-apporte" title="Ce que le yoga m'apporte — Camille" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-card-title">Ce que le yoga m'apporte</div>
         <div class="video-card-caption">Camille</div>
       </div>
 
       <div class="video-card">
+        <!-- Remplace REMPLACE_ID_presentation par l'ID de la vidéo YouTube (dans l'URL après watch?v= ou après youtu.be/) -->
         <div class="video-frame">
-          <video controls playsinline preload="metadata" poster="img/reel-presentation-poster.png">
-            <source src="video/reel-presentation.mp4" type="video/mp4">
-          </video>
+          <iframe src="https://www.youtube.com/embed/REMPLACE_ID_presentation" title="Présentation — Camille" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-card-title">Présentation</div>
         <div class="video-card-caption">Camille</div>
