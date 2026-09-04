@@ -1468,6 +1468,93 @@
     .carousels-column { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 1.5rem; width: 100%; }
   }
 </style>
+
+<style>
+  .realisation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 780px;
+  }
+
+  .realisation-card {
+    display: flex;
+    gap: 1.75rem;
+    align-items: stretch;
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .realisation-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+  }
+
+  .realisation-card-thumb {
+    flex: 0 0 180px;
+    width: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .realisation-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .realisation-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .realisation-card-tag {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+  }
+
+  .realisation-card-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--cream);
+    line-height: 1.3;
+  }
+
+  .realisation-card-excerpt {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--cream-soft);
+    line-height: 1.7;
+  }
+
+  .realisation-card-link {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: #FF1DA8;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 600px) {
+    .realisation-card { flex-direction: column; }
+    .realisation-card-thumb { width: 100%; height: 180px; }
+  }
+</style>
 </head>
 
 
@@ -1528,91 +1615,44 @@
 
 
 <!-- HERO REALISATIONS -->
-<section class="hero" style="min-height: 50vh; padding: 8rem 2rem 3rem;">
+<section class="hero" style="min-height: 40vh; padding: 8rem 2rem 3rem;">
   <div class="eyebrow">Réalisations · Le Mans</div>
   <h1 style="font-size: clamp(2.4rem, 5vw, 4rem);">Des exemples concrets,<br><em>pas des promesses.</em></h1>
-  <p class="hero-sub" style="max-width: none;"><span class="hero-line" style="display:block;">Avant de me faire confiance, regarde ce que ça donne pour de vrai.</span><span class="hero-line" style="display:block;">Voici un exemple de collaboration, du diagnostic jusqu'au contenu publié.</span></p>
+  <p class="hero-sub" style="max-width: none;"><span class="hero-line" style="display:block;">Avant de me faire confiance, regarde ce que ça donne pour de vrai.</span><span class="hero-line" style="display:block;">Clique sur un projet pour voir le détail de la collaboration.</span></p>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- CAS CLIENT CAMILLE -->
+<!-- LISTE DES REALISATIONS -->
 <section>
   <div class="container fade-in visible">
+    <div class="realisation-list">
 
-    <div class="case-study">
-      <div class="case-header">
-        <div class="case-tag">Cas client</div>
-        <div class="case-credit">Photos : <a href="https://bastienpluphotographe.fr/" target="_blank" rel="noopener">Bastien Plu</a>, photographe au Mans</div>
-      </div>
-      <div class="section-label">Camille · @camshala</div>
-      <h2 style="margin-bottom: 1rem;">Professeure de yoga,<br>Le Mans.</h2>
-      <p class="section-intro"><a href="audit.html" class="toggle-link">Audit de compte</a> suivi d'un accompagnement en <a href="coaching.html" class="toggle-link">coaching</a> : refonte du feed, optimisation de la bio, création des highlights, et déclinaison de trois carrousels de contenu.</p>
+      <a href="realisations-camille.html" class="realisation-card">
+        <div class="realisation-card-thumb">
+          <img src="img/camille-portrait.jpg" alt="Camille, professeure de yoga, souriante en studio">
+        </div>
+        <div class="realisation-card-body">
+          <div class="realisation-card-tag">Cas client</div>
+          <div class="realisation-card-title">Camille · Professeure de yoga, Le Mans</div>
+          <p class="realisation-card-excerpt">Audit de compte suivi d'un accompagnement en coaching : refonte du feed, optimisation de la bio, création des highlights, carrousels et reels.</p>
+          <span class="realisation-card-link">Voir le projet →</span>
+        </div>
+      </a>
 
-      <!-- AVANT / APRES + CARROUSELS -->
-      <div class="case-visuals">
-      <div class="before-after-frame">
-        <img src="img/avant-apres-feed.jpg" alt="Feed Instagram de Camille avant et après la refonte visuelle">
-      </div>
-
-      <!-- CARROUSELS EN MOCKUP TÉLÉPHONE -->
-      <div class="carousels-column">
-        
-      <div class="phone-carousel-block">
-        <div class="phone-carousel-title">"Qui suis-je ?"</div>
-        <div class="phone-carousel" data-carousel>
-          <div class="phone-frame">
-            <div class="phone-notch"></div>
-            <div class="phone-slides">
-              <img src="img/c1_slide1_bienvenue-qui-suis-je.jpg" class="phone-slide active" alt="Bienvenue, présentation de Camille, professeure de yoga au Mans"><img src="img/c1_slide2_professeur-de-yoga.jpg" class="phone-slide" alt="Camille se présente comme professeure de yoga"><img src="img/c1_slide3_depuis-8-ans.jpg" class="phone-slide" alt="Camille pratique le yoga depuis 8 ans"><img src="img/c1_slide4_ma-vision-du-yoga.jpg" class="phone-slide" alt="La vision du yoga de Camille : pas besoin d'être parfait"><img src="img/c1_slide5_pourquoi-jenseigne.jpg" class="phone-slide" alt="Pourquoi Camille enseigne le yoga"><img src="img/c1_slide6_mes-cours.jpg" class="phone-slide" alt="Les cours de yoga de Camille : le juste équilibre"><img src="img/c1_slide7_pour-qui.jpg" class="phone-slide" alt="Cours de yoga pour débutants et confirmés"><img src="img/c1_slide8_ce-que-tu-vas-trouver.jpg" class="phone-slide" alt="Ce que propose Camille pendant ses cours de yoga"><img src="img/c1_slide9_on-pratique-ensemble.jpg" class="phone-slide" alt="Invitation à pratiquer le yoga ensemble avec Camille">
-            </div>
-            <button class="phone-nav prev" aria-label="Précédent">‹</button>
-            <button class="phone-nav next" aria-label="Suivant">›</button>
-          </div>
-          <div class="phone-dots">
-            <span class="phone-dot active" data-index="0"></span><span class="phone-dot" data-index="1"></span><span class="phone-dot" data-index="2"></span><span class="phone-dot" data-index="3"></span><span class="phone-dot" data-index="4"></span><span class="phone-dot" data-index="5"></span><span class="phone-dot" data-index="6"></span><span class="phone-dot" data-index="7"></span><span class="phone-dot" data-index="8"></span>
-          </div>
+      <a href="realisations-yellowclub.html" class="realisation-card">
+        <div class="realisation-card-thumb">
+          <img src="img/yellowclub-thumb.jpg" alt="Yellow Club Pilates, club de Pilates reformer au Mans">
         </div>
-      </div>
-        
-      <div class="phone-carousel-block">
-        <div class="phone-carousel-title">"Pratiquer avec moi"</div>
-        <div class="phone-carousel" data-carousel>
-          <div class="phone-frame">
-            <div class="phone-notch"></div>
-            <div class="phone-slides">
-              <img src="img/c2_slide1_pratiquer-avec-moi.jpg" class="phone-slide active" alt="Pratiquer le yoga avec Camille"><img src="img/c2_slide2_ou-pratiquer.jpg" class="phone-slide" alt="Où pratiquer le yoga avec Camille, au Mans ou en ligne"><img src="img/c2_slide3_quand.jpg" class="phone-slide" alt="Horaires des cours de yoga collectifs et individuels"><img src="img/c2_slide4_comment-reserver.jpg" class="phone-slide" alt="Comment réserver un cours de yoga avec Camille"><img src="img/c2_slide5_on-pratique-ensemble.jpg" class="phone-slide" alt="Réserver son prochain cours de yoga avec Camille">
-            </div>
-            <button class="phone-nav prev" aria-label="Précédent">‹</button>
-            <button class="phone-nav next" aria-label="Suivant">›</button>
-          </div>
-          <div class="phone-dots">
-            <span class="phone-dot active" data-index="0"></span><span class="phone-dot" data-index="1"></span><span class="phone-dot" data-index="2"></span><span class="phone-dot" data-index="3"></span><span class="phone-dot" data-index="4"></span>
-          </div>
+        <div class="realisation-card-body">
+          <div class="realisation-card-tag">Cas client</div>
+          <div class="realisation-card-title">Yellow Club Pilates · Club de Pilates reformer, Le Mans</div>
+          <p class="realisation-card-excerpt">Création de contenu ponctuel : tournage et montage de reels pour présenter le club, son ambiance et ses cours.</p>
+          <span class="realisation-card-link">Voir le projet →</span>
         </div>
-      </div>
-        
-      <div class="phone-carousel-block">
-        <div class="phone-carousel-title">"Pourquoi tester le yoga avec moi ?"</div>
-        <div class="phone-carousel" data-carousel>
-          <div class="phone-frame">
-            <div class="phone-notch"></div>
-            <div class="phone-slides">
-              <img src="img/c3_slide1_pourquoi-tester.jpg" class="phone-slide active" alt="Pourquoi tester le yoga avec Camille"><img src="img/c3_slide2_debutante-curieuse.jpg" class="phone-slide" alt="Le yoga pour les débutantes curieuses"><img src="img/c3_slide3_journees-remplies.jpg" class="phone-slide" alt="Le yoga adapté aux journées bien remplies"><img src="img/c3_slide4_adepte-du-yoga.jpg" class="phone-slide" alt="Le yoga pour les adeptes qui veulent changer d'habitudes"><img src="img/c3_slide5_yoga-dynamique.jpg" class="phone-slide" alt="Venir tester le yoga dynamique avec Camille">
-            </div>
-            <button class="phone-nav prev" aria-label="Précédent">‹</button>
-            <button class="phone-nav next" aria-label="Suivant">›</button>
-          </div>
-          <div class="phone-dots">
-            <span class="phone-dot active" data-index="0"></span><span class="phone-dot" data-index="1"></span><span class="phone-dot" data-index="2"></span><span class="phone-dot" data-index="3"></span><span class="phone-dot" data-index="4"></span>
-          </div>
-        </div>
-      </div>
-      </div>
-      </div>
+      </a>
 
     </div>
-
   </div>
 </section>
 
