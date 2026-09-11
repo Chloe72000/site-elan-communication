@@ -1472,9 +1472,16 @@
   .video-showcase-grid {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: center;
     gap: 2.5rem;
     margin-top: 2.5rem;
+  }
+
+  .video-grid-secondary {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    gap: 2rem;
   }
 
   .video-card {
@@ -1522,9 +1529,15 @@
     line-height: 1.5;
   }
 
-  @media (max-width: 600px) {
-    .video-card, .video-frame { width: 160px; }
+  @media (max-width: 700px) {
+    .video-grid-secondary { grid-template-columns: repeat(2, 150px); gap: 1.25rem; }
+    .video-card, .video-frame { width: 150px; }
     .video-card.featured, .video-card.featured .video-frame { width: 220px; }
+  }
+
+  @media (max-width: 420px) {
+    .video-grid-secondary { grid-template-columns: 1fr; justify-items: center; }
+    .video-card.featured, .video-card.featured .video-frame { width: 200px; }
   }
 
   .video-card.featured {
@@ -1650,36 +1663,40 @@
         <div class="video-card-caption">Clima'Cho</div>
       </div>
 
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/zWdU8pBgDhc" title="Vous construisez votre maison ? Pensez à ça ! — Clima'Cho" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-card-title">Vous construisez votre maison ? Pensez à ça !</div>
-        <div class="video-card-caption">Clima'Cho</div>
-      </div>
+      <div class="video-grid-secondary">
 
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/tBktwgcMSzM" title="Pourquoi installer une clim chez soi en 2026 ? — Clima'Cho" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/zWdU8pBgDhc" title="Vous construisez votre maison ? Pensez à ça ! — Clima'Cho" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-card-title">Vous construisez votre maison ? Pensez à ça !</div>
+          <div class="video-card-caption">Clima'Cho</div>
         </div>
-        <div class="video-card-title">Pourquoi installer une clim chez soi en 2026 ?</div>
-        <div class="video-card-caption">Clima'Cho</div>
-      </div>
 
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/PSEKYAy6BUs" title="Je regrette de ne pas avoir fait ça plus tôt... — Clima'Cho" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/tBktwgcMSzM" title="Pourquoi installer une clim chez soi en 2026 ? — Clima'Cho" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-card-title">Pourquoi installer une clim chez soi en 2026 ?</div>
+          <div class="video-card-caption">Clima'Cho</div>
         </div>
-        <div class="video-card-title">Je regrette de ne pas avoir fait ça plus tôt...</div>
-        <div class="video-card-caption">Clima'Cho</div>
-      </div>
 
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/AkOP3EXK_Ho" title="Tu veux installer ta clim comme un pro ? — Clima'Cho" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/PSEKYAy6BUs" title="Je regrette de ne pas avoir fait ça plus tôt... — Clima'Cho" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-card-title">Je regrette de ne pas avoir fait ça plus tôt...</div>
+          <div class="video-card-caption">Clima'Cho</div>
         </div>
-        <div class="video-card-title">Tu veux installer ta clim comme un pro ?</div>
-        <div class="video-card-caption">Clima'Cho</div>
+
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/AkOP3EXK_Ho" title="Tu veux installer ta clim comme un pro ? — Clima'Cho" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-card-title">Tu veux installer ta clim comme un pro ?</div>
+          <div class="video-card-caption">Clima'Cho</div>
+        </div>
+
       </div>
 
     </div>
