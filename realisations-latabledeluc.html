@@ -1474,12 +1474,12 @@
     flex-direction: column;
     align-items: center;
     gap: 0.85rem;
-    width: 240px;
+    width: 160px;
   }
 
   .video-frame {
     position: relative;
-    width: 240px;
+    width: 160px;
     aspect-ratio: 9 / 16;
     border-radius: 20px;
     border: 5px solid #1a0610;
@@ -1514,18 +1514,36 @@
     line-height: 1.5;
   }
 
-  /* GRILLE 2 COLONNES, VIDEOS EN GRAND FORMAT */
-  .video-showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 240px);
-    gap: 2rem 2.5rem;
+  /* MISE EN PAGE : GRANDE VIDEO A GAUCHE + GRILLE 3x2 A DROITE */
+  .video-showcase-layout {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 2.5rem;
   }
 
-  @media (max-width: 640px) {
-    .video-showcase-grid { grid-template-columns: repeat(2, 150px); gap: 1.5rem 1.25rem; }
+  .video-hero { flex: 0 0 auto; }
+  .video-hero .video-card { width: 330px; }
+  .video-hero .video-frame { width: 330px; }
+  .video-hero .video-card-title { font-size: 1.1rem; }
+
+  .video-grid-side {
+    display: grid;
+    grid-template-columns: repeat(3, 160px);
+    gap: 1.5rem 1.25rem;
+  }
+
+  @media (max-width: 900px) {
+    .video-showcase-layout { flex-direction: column; align-items: center; }
+    .video-hero .video-card, .video-hero .video-frame { width: 260px; }
+  }
+
+  @media (max-width: 600px) {
+    .video-grid-side { grid-template-columns: repeat(2, 150px); }
     .video-card, .video-frame { width: 150px; }
+    .video-hero .video-card, .video-hero .video-frame { width: 220px; }
   }
 
   .video-frame iframe {
@@ -1632,65 +1650,70 @@
     <h2 style="margin-bottom: 1rem;">Des reels tournés<br>et montés pour le restaurant.</h2>
     <p class="section-intro">Prise de vue et montage : le chef et l'équipe sont à l'écran, je m'occupe du tournage et de la mise en forme. <a href="contenu-ponctuel.html" class="toggle-link">Découvrir la création de contenu ponctuel</a>.</p>
 
-    <!-- GRILLE 2 COLONNES : 3 LIGNES DE 2 + 1 LIGNE DE 1 -->
-    <div class="video-showcase-grid">
+    <!-- MISE EN PAGE : GRANDE VIDEO A GAUCHE + GRILLE 3x2 A DROITE -->
+    <div class="video-showcase-layout">
 
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/g5vv7WWHXvU" title="Le chef Luc vous présente son équipe ! — La Table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <div class="video-hero">
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/g5vv7WWHXvU" title="Le chef Luc vous présente son équipe ! — La Table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-card-title">Le chef Luc vous présente son équipe !</div>
+          <div class="video-card-caption">La Table de Luc</div>
         </div>
-        <div class="video-card-title">Le chef Luc vous présente son équipe !</div>
-        <div class="video-card-caption">La Table de Luc</div>
       </div>
 
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/QpTyWo1Ebc8" title="Stop, attend 1 minute — La Table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-card-title">Stop, attend 1 minute : regarde chaque détail avant que ces assiettes arrivent à ta table</div>
-        <div class="video-card-caption">La Table de Luc</div>
-      </div>
+      <div class="video-grid-side">
 
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/7NWjpwM8sUI" title="Lequel tu choisiras ? — La Table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/QpTyWo1Ebc8" title="Stop, attend 1 minute — La Table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-card-title">Stop, attend 1 minute : regarde chaque détail avant que ces assiettes arrivent à ta table</div>
+          <div class="video-card-caption">La Table de Luc</div>
         </div>
-        <div class="video-card-title">Lequel tu choisiras ?</div>
-        <div class="video-card-caption">La Table de Luc</div>
-      </div>
 
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/739zfWKcstQ" title="Une cliente appelle au téléphone — La Table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/7NWjpwM8sUI" title="Lequel tu choisiras ? — La Table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-card-title">Lequel tu choisiras ?</div>
+          <div class="video-card-caption">La Table de Luc</div>
         </div>
-        <div class="video-card-title">Une cliente appelle au téléphone</div>
-        <div class="video-card-caption">La Table de Luc</div>
-      </div>
 
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/FHKsKC1oQ34" title="La Table de Luc c'est (vraiment) ça" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/739zfWKcstQ" title="Une cliente appelle au téléphone — La Table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-card-title">Une cliente appelle au téléphone</div>
+          <div class="video-card-caption">La Table de Luc</div>
         </div>
-        <div class="video-card-title">La Table de Luc c'est (vraiment) ça</div>
-        <div class="video-card-caption">La Table de Luc</div>
-      </div>
 
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/h7BgCK01mb4" title="Ce que vous voyez VS ce que nous voyons — La Table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/FHKsKC1oQ34" title="La Table de Luc c'est (vraiment) ça" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-card-title">La Table de Luc c'est (vraiment) ça</div>
+          <div class="video-card-caption">La Table de Luc</div>
         </div>
-        <div class="video-card-title">Ce que vous voyez VS ce que nous voyons</div>
-        <div class="video-card-caption">La Table de Luc</div>
-      </div>
 
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/ifEM8ijU_3E" title="On t'emmène à la table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/h7BgCK01mb4" title="Ce que vous voyez VS ce que nous voyons — La Table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-card-title">Ce que vous voyez VS ce que nous voyons</div>
+          <div class="video-card-caption">La Table de Luc</div>
         </div>
-        <div class="video-card-title">On t'emmène à la table de Luc</div>
-        <div class="video-card-caption">La Table de Luc</div>
-      </div>
 
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/ifEM8ijU_3E" title="On t'emmène à la table de Luc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-card-title">On t'emmène à la table de Luc</div>
+          <div class="video-card-caption">La Table de Luc</div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
