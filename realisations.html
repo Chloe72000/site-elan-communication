@@ -1471,16 +1471,15 @@
 
 <style>
   .realisation-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    max-width: 780px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
   }
 
   .realisation-card {
     display: flex;
-    gap: 1.75rem;
-    align-items: stretch;
+    flex-direction: column;
+    gap: 1.25rem;
     background: var(--bg-card);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -1497,8 +1496,8 @@
   }
 
   .realisation-card-thumb {
-    flex: 0 0 180px;
-    width: 180px;
+    width: 100%;
+    height: 200px;
     border-radius: 12px;
     overflow: hidden;
   }
@@ -1514,7 +1513,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.5rem;
     min-width: 0;
   }
@@ -1550,9 +1549,8 @@
     font-size: 0.9rem;
   }
 
-  @media (max-width: 600px) {
-    .realisation-card { flex-direction: column; }
-    .realisation-card-thumb { width: 100%; height: 180px; }
+  @media (max-width: 700px) {
+    .realisation-list { grid-template-columns: 1fr; }
   }
 </style>
 </head>
