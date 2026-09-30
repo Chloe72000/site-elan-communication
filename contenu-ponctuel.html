@@ -810,6 +810,138 @@
     letter-spacing: 0;
   }
 
+  /* OPTION TOURNAGE SUR SITE */
+  .option-block {
+    margin-top: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-bordeaux);
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .option-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rose-light);
+    background: rgba(232, 51, 140, 0.12);
+    border-radius: 100px;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .option-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .option-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--cream-muted);
+    line-height: 1.6;
+  }
+  .option-price {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 1.25rem;
+  }
+  .option-price small {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--cream-muted);
+    letter-spacing: 0;
+  }
+  .option-rates {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .option-rates li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--cream);
+    line-height: 1.35;
+  }
+  .option-rates li strong { font-weight: 600; }
+  .option-rates li small { font-size: 0.78rem; color: var(--cream-muted); font-weight: 300; }
+  .option-rate-price {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+    white-space: nowrap;
+  }
+  .option-fees-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--rose-light);
+    margin-bottom: 0.6rem;
+  }
+  .option-fees {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .option-fees li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--cream-soft);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .option-fees li strong { color: var(--cream); font-weight: 600; }
+  .option-addon {
+    margin-top: 1.25rem;
+    padding: 0.9rem 1rem;
+    border: 1px dashed var(--border-bordeaux);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .option-addon-text {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--cream-muted);
+    line-height: 1.5;
+  }
+  .option-addon-text strong { color: var(--cream); font-weight: 600; }
+  .option-addon-price {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--rose-light);
+    white-space: nowrap;
+  }
+  @media (max-width: 768px) {
+    .option-block { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem 1.5rem; }
+  }
+
   /* LEGAL / PRESTATION DETAILS */
   .detail-bar {
     background: rgba(255,255,255,0.02);
@@ -1404,7 +1536,7 @@
             <span class="currency">€</span>
             <span class="amount">55</span>
           </div>
-          <div class="pack-saving">Prestation unique</div>
+          <div class="pack-saving">Prestation unique · shooting sur site en option (+75€)</div>
         </div>
         <ul class="pack-features">
           <li>
@@ -1436,7 +1568,7 @@
             <span class="currency">€</span>
             <span class="amount">95</span>
           </div>
-          <div class="pack-saving">Prestation unique</div>
+          <div class="pack-saving">Prestation unique · shooting sur site en option (+75€)</div>
         </div>
         <ul class="pack-features">
           <li>
@@ -1468,7 +1600,7 @@
             <span class="currency">€</span>
             <span class="amount">145</span>
           </div>
-          <div class="pack-saving">Prestation unique · tournage en option (+50€)</div>
+          <div class="pack-saving">Prestation unique · tournage sur site en option (+130€)</div>
         </div>
         <ul class="pack-features">
           <li>
@@ -1491,6 +1623,32 @@
         <a href="mailto:contact@chloefortune.com?subject=Commande Reel" class="pack-cta">Je commande →</a>
       </div>
 
+    </div>
+
+    <!-- OPTION TOURNAGE SUR SITE -->
+    <div class="option-block">
+      <div>
+        <div class="option-tag">✦ En option</div>
+        <h3 class="option-title">Tournage & shooting sur site</h3>
+        <p class="option-desc">Je viens directement chez toi, sur ton chantier, dans ta boutique ou ton atelier pour capter des images authentiques de ton activité. Disponible pour tous les formats.</p>
+      </div>
+      <div>
+        <ul class="option-rates">
+          <li><span><strong>Tournage vidéo</strong><br><small>pour un reel</small></span><span class="option-rate-price">130€</span></li>
+          <li><span><strong>Shooting photo</strong><br><small>pour un post ou un carrousel</small></span><span class="option-rate-price">75€</span></li>
+        </ul>
+        <div class="option-fees-label">Frais de déplacement facturés en sus :</div>
+        <ul class="option-fees">
+          <li><span>Moins de 20 km</span><strong>Offert</strong></li>
+          <li><span>De 20 à 40 km</span><strong>20€</strong></li>
+          <li><span>De 40 à 60 km</span><strong>35€</strong></li>
+          <li><span>Au-delà de 60 km</span><strong>Sur devis</strong></li>
+        </ul>
+        <div class="option-addon">
+          <div class="option-addon-text"><strong>+ Livraison des rushs</strong><br>Toutes les vidéos ou photos brutes de la séance, à réutiliser comme tu veux, via un lien téléchargeable.</div>
+          <div class="option-addon-price">40€</div>
+        </div>
+      </div>
     </div>
 
     <div class="detail-bar">
