@@ -1548,6 +1548,25 @@
 
   .video-grid-side.cols-2 { grid-template-columns: repeat(2, 160px); }
 
+  .video-grid-equal {
+    display: grid;
+    grid-template-columns: repeat(4, 220px);
+    gap: 1.5rem 1.5rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+  .video-grid-equal .video-card,
+  .video-grid-equal .video-frame { width: 220px; }
+
+  @media (max-width: 1000px) {
+    .video-grid-equal { grid-template-columns: repeat(2, 220px); }
+  }
+  @media (max-width: 520px) {
+    .video-grid-equal { grid-template-columns: repeat(2, 150px); gap: 1.25rem 1rem; }
+    .video-grid-equal .video-card,
+    .video-grid-equal .video-frame { width: 150px; }
+  }
+
   .video-frame iframe {
     position: absolute;
     inset: 0;
@@ -1648,7 +1667,7 @@
 <div class="section-divider"></div>
 
 <!-- VIDEOS REALISEES POUR ART'IM -->
-<!-- 4 vidéos : la 1ère est mise en avant en grand format, les 3 autres en grille à droite. -->
+<!-- 4 vidéos de même taille, sur une ligne (2x2 sur mobile). -->
 <!-- Pour remplacer une vidéo : change l'ID après /embed/ dans le src de l'iframe correspondante. -->
 <section>
   <div class="container fade-in visible">
@@ -1656,10 +1675,9 @@
     <h2 style="margin-bottom: 1rem;">Des reels pour installer<br>l'expertise de l'agence.</h2>
     <p class="section-intro">Une sélection des reels réalisés dans le cadre de l'accompagnement mensuel. <a href="elan-communication-packs.html" class="toggle-link">Découvrir les packs de community management</a>.</p>
 
-    <!-- MISE EN PAGE : GRANDE VIDEO A GAUCHE + GRILLE A DROITE -->
-    <div class="video-showcase-layout">
+    <!-- MISE EN PAGE : 4 VIDEOS DE MEME TAILLE -->
+    <div class="video-grid-equal">
 
-      <div class="video-hero">
         <div class="video-card">
           <div class="video-frame">
             <iframe src="https://www.youtube-nocookie.com/embed/Ias_OGNzlmc" title="Tu choisis qui (avec l'équipe Art'im) ? — Art'im" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -1667,9 +1685,6 @@
           <div class="video-card-title">Tu choisis qui (avec l'équipe Art'im) ?</div>
           <div class="video-card-caption">Art'im</div>
         </div>
-      </div>
-
-      <div class="video-grid-side">
 
         <div class="video-card">
           <div class="video-frame">
@@ -1695,7 +1710,6 @@
           <div class="video-card-caption">Art'im</div>
         </div>
 
-      </div>
     </div>
   </div>
 </section>
