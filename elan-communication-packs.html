@@ -1287,6 +1287,173 @@
   }
 
   .cross-sell-link:hover { opacity: 0.8; }
+  /* PACKS — côte à côte : Signature en grand (ancrage prix), Élan mis en avant comme le bon choix */
+  .packs-grid--anchored {
+    grid-template-columns: 1.3fr 1fr 1fr;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .pack-card--hero {
+    padding: 2.75rem 2.5rem;
+    border-color: var(--border-strong);
+    background: linear-gradient(160deg, rgba(70, 14, 34, 0.75) 0%, rgba(42, 8, 24, 0.75) 100%);
+  }
+  .pack-card--hero .pack-name { font-size: 2.1rem; }
+  .pack-card--hero .pack-for { font-size: 0.95rem; }
+  .pack-card--hero .pack-price { font-size: 3.4rem; }
+  .pack-card--hero .pack-price .currency { font-size: 1.7rem; }
+  .pack-card--hero .pack-features li { font-size: 0.95rem; }
+  .pack-card--hero .pack-cta { padding: 0.95rem 1.5rem; font-size: 0.95rem; }
+  .pack-card--side { padding: 1.75rem; }
+  .packs-grid--anchored .pack-card--side { height: 90%; }
+  .pack-card--side .pack-name { font-size: 1.3rem; }
+  .pack-card--side .pack-for { font-size: 0.82rem; min-height: 0; margin-bottom: 1.25rem; }
+  .pack-card--side .pack-price { font-size: 2.1rem; }
+  .pack-card--side .pack-price .currency { font-size: 1.15rem; }
+  .pack-card--side .pack-price-area { margin-bottom: 1.25rem; padding-bottom: 1.25rem; }
+  .pack-card--side .pack-features { gap: 0.5rem; margin-bottom: 1.5rem; }
+  .pack-card--side .pack-features li { font-size: 0.83rem; }
+  .pack-card--pick {
+    border-color: var(--rose);
+    box-shadow: 0 0 0 1px var(--rose), 0 20px 50px -18px rgba(232, 51, 140, 0.55);
+  }
+  @media (max-width: 960px) {
+    .packs-grid--anchored { grid-template-columns: 1fr 1fr; align-items: stretch; }
+    .packs-grid--anchored .pack-card--hero { grid-column: 1 / -1; }
+    .packs-grid--anchored .pack-card--side { height: auto; }
+  }
+  @media (max-width: 768px) {
+    .packs-grid--anchored { grid-template-columns: 1fr; }
+    .pack-card--hero { padding: 2.25rem 1.75rem; }
+    .pack-card--hero .pack-price { font-size: 3rem; }
+  }
+  .pack-spots {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--cream-soft);
+    margin-bottom: 0.9rem;
+  }
+  .pack-spots-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--rose-light);
+    box-shadow: 0 0 0 4px var(--rose-glow);
+    flex-shrink: 0;
+  }
+  .pack-proof {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--cream-muted);
+    text-decoration: none;
+    margin-bottom: 0.9rem;
+    padding: 0.6rem 0.85rem;
+    border: 1px dashed var(--border-bordeaux);
+    border-radius: 10px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .pack-proof strong { color: var(--cream); font-weight: 600; }
+  .pack-proof:hover { color: var(--cream); border-color: var(--rose-light); }
+  /* COMMENT ÇA SE PASSE */
+  .how-it-works { margin-top: 4rem; }
+  .how-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    margin-bottom: 1.75rem;
+  }
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .how-step {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1.5rem 1.6rem;
+  }
+  .how-step-num {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--rose-light);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+  .how-step-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .how-step-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--cream-soft);
+    line-height: 1.6;
+  }
+
+  /* MINI FAQ */
+  .mini-faq { margin-top: 3.5rem; max-width: 780px; }
+  .mini-faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+  .mini-faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cream);
+  }
+  .mini-faq-item summary::-webkit-details-marker { display: none; }
+  .mini-faq-icon {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--border-bordeaux);
+    color: var(--rose-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+  .mini-faq-item[open] .mini-faq-icon { transform: rotate(45deg); }
+  .mini-faq-item p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--cream-soft);
+    line-height: 1.7;
+    padding: 0 2.5rem 1.2rem 0;
+  }
+  .mini-faq-more {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--rose-light);
+    text-decoration: none;
+  }
+  .mini-faq-more:hover { color: var(--cream); }
+
+  @media (max-width: 768px) {
+    .how-steps { grid-template-columns: 1fr; }
+    .how-it-works { margin-top: 3rem; }
+    .mini-faq-item p { padding-right: 0; }
+  }
 </style>
 
 <script type="application/ld+json">
@@ -1433,10 +1600,116 @@
       </div>
     </div>
 
-    <div class="packs-grid fade-in">
+    <div class="packs-grid packs-grid--anchored fade-in">
+
+      <!-- SIGNATURE -->
+      <div class="pack-card pack-card--hero">
+        <div class="pack-badge">✦ L'accompagnement complet</div>
+        <div class="pack-name">Signature</div>
+        <div class="pack-for">Pour ceux qui confient leur communication à 100 % — et qui veulent une présence premium, pilotée et reportée chaque mois.</div>
+        <div class="pack-price-area">
+          <div class="pack-price">
+            <span class="currency">€</span>
+            <span class="amount" data-mensuel="990" data-3mois="940" data-6mois="891" data-12mois="841">990</span>
+            <span class="period">/mois</span>
+          </div>
+          <div class="pack-saving" data-mensuel="" data-3mois="Économie de 600 €/an" data-6mois="Économie de 1 188 €/an" data-12mois="Économie de 1 788 €/an"></div>
+        </div>
+        <ul class="pack-features">
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Jusqu'à 3 réseaux sociaux
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            12 posts par mois
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            4h de tournage / mois
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Veille concurrentielle et tendances
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Stories régulières
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Réponses messages & commentaires (complète)
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Reporting mensuel inclus
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Appel stratégique mensuel (bilan + plan du mois)
+          </li>
+          <li class="bonus-line">
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Heure bonus incluse ✦
+          </li>
+        </ul>
+        <div class="pack-spots"><span class="pack-spots-dot"></span>3 places Signature disponibles</div>
+        <a href="contact.html?pack=signature" class="pack-cta">Je veux ce pack →</a>
+      </div>
+
+      <!-- ÉLAN -->
+      <div class="pack-card featured pack-card--side pack-card--pick">
+        <div class="pack-badge">⭐ Le plus choisi</div>
+        <div class="pack-name">Élan</div>
+        <div class="pack-for">Pour ceux qui veulent vraiment progresser, déléguer, et voir leurs réseaux prendre vie — sans s'en mêler au quotidien.</div>
+        <div class="pack-price-area">
+          <div class="pack-price">
+            <span class="currency">€</span>
+            <span class="amount" data-mensuel="590" data-3mois="560" data-6mois="531" data-12mois="501">590</span>
+            <span class="period">/mois</span>
+          </div>
+          <div class="pack-saving" data-mensuel="" data-3mois="Économie de 360 €/an" data-6mois="Économie de 708 €/an" data-12mois="Économie de 1 068 €/an"></div>
+        </div>
+        <ul class="pack-features">
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            2 réseaux sociaux
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            8 posts par mois
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            2 à 3h de tournage / mois
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Veille concurrentielle et tendances
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Stories occasionnelles
+          </li>
+          <li>
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Réponses messages & commentaires (partielle)
+          </li>
+          <li>
+            <span class="icon icon-no"><svg class="check-icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+            Reporting mensuel
+          </li>
+          <li class="bonus-line">
+            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Heure bonus incluse ✦
+          </li>
+        </ul>
+        <a href="realisations-artim.html" class="pack-proof">C'est le pack choisi par <strong>Art'im</strong> · voir le projet →</a>
+        <a href="contact.html?pack=elan" class="pack-cta">Je veux ce pack →</a>
+      </div>
 
       <!-- PRÉSENCE -->
-      <div class="pack-card">
+      <div class="pack-card pack-card--side">
         <div class="pack-name">Présence</div>
         <div class="pack-for">Pour l'artisan ou commerçant qui veut simplement exister en ligne, régulièrement, sans se battre avec les algorithmes.</div>
         <div class="pack-price-area">
@@ -1485,106 +1758,7 @@
             Heure bonus disponible (+50 €/mois)
           </li>
         </ul>
-        <a href="mailto:contact@chloefortune.com?subject=Pack Présence" class="pack-cta">Je veux ce pack →</a>
-      </div>
-
-      <!-- ÉLAN -->
-      <div class="pack-card featured">
-        <div class="pack-badge">⭐ Le plus choisi</div>
-        <div class="pack-name">Élan</div>
-        <div class="pack-for">Pour ceux qui veulent vraiment progresser, déléguer, et voir leurs réseaux prendre vie — sans s'en mêler au quotidien.</div>
-        <div class="pack-price-area">
-          <div class="pack-price">
-            <span class="currency">€</span>
-            <span class="amount" data-mensuel="590" data-3mois="560" data-6mois="531" data-12mois="501">590</span>
-            <span class="period">/mois</span>
-          </div>
-          <div class="pack-saving" data-mensuel="" data-3mois="Économie de 360 €/an" data-6mois="Économie de 708 €/an" data-12mois="Économie de 1 068 €/an"></div>
-        </div>
-        <ul class="pack-features">
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            2 réseaux sociaux
-          </li>
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            8 posts par mois
-          </li>
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            2 à 3h de tournage / mois
-          </li>
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Veille concurrentielle et tendances
-          </li>
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Stories occasionnelles
-          </li>
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Réponses messages & commentaires (partielle)
-          </li>
-          <li>
-            <span class="icon icon-no"><svg class="check-icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-            Reporting mensuel
-          </li>
-          <li class="bonus-line">
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Heure bonus incluse ✦
-          </li>
-        </ul>
-        <a href="mailto:contact@chloefortune.com?subject=Pack Élan" class="pack-cta">Je veux ce pack →</a>
-      </div>
-
-      <!-- SIGNATURE -->
-      <div class="pack-card">
-        <div class="pack-name">Signature</div>
-        <div class="pack-for">Pour ceux qui confient leur communication à 100 % — et qui veulent une présence premium, pilotée et reportée chaque mois.</div>
-        <div class="pack-price-area">
-          <div class="pack-price">
-            <span class="currency">€</span>
-            <span class="amount" data-mensuel="790" data-3mois="750" data-6mois="711" data-12mois="671">790</span>
-            <span class="period">/mois</span>
-          </div>
-          <div class="pack-saving" data-mensuel="" data-3mois="Économie de 480 €/an" data-6mois="Économie de 948 €/an" data-12mois="Économie de 1 428 €/an"></div>
-        </div>
-        <ul class="pack-features">
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            2 réseaux sociaux
-          </li>
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            12 posts par mois
-          </li>
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            4h de tournage / mois
-          </li>
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Veille concurrentielle et tendances
-          </li>
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Stories régulières
-          </li>
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Réponses messages & commentaires (complète)
-          </li>
-          <li>
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Reporting mensuel inclus
-          </li>
-          <li class="bonus-line">
-            <span class="icon"><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Heure bonus incluse ✦
-          </li>
-        </ul>
-        <a href="mailto:contact@chloefortune.com?subject=Pack Signature" class="pack-cta">Je veux ce pack →</a>
+        <a href="contact.html?pack=presence" class="pack-cta">Je veux ce pack →</a>
       </div>
 
     </div>
@@ -1594,6 +1768,52 @@
       <div class="detail-item"><span class="dot"></span>Résiliation par email avec 1 mois de préavis</div>
       <div class="detail-item"><span class="dot"></span>Devis personnalisé possible</div>
       <div class="detail-item"><span class="dot"></span>Appel découverte offert</div>
+      <div class="detail-item"><span class="dot"></span>Prix nets · TVA non applicable, art. 293 B du CGI</div>
+    </div>
+
+    <!-- COMMENT ÇA SE PASSE -->
+    <div class="how-it-works fade-in">
+      <div class="section-label">Comment ça se passe</div>
+      <h3 class="how-title">Simple, en trois étapes.</h3>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">01</div>
+          <div class="how-step-name">Appel découverte</div>
+          <p class="how-step-desc">20 minutes offertes, sans engagement. On regarde ton activité, tes objectifs, et le pack qui te correspond vraiment.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">02</div>
+          <div class="how-step-name">On cadre ensemble</div>
+          <p class="how-step-desc">Ton ton de marque, tes sujets, et comment tu veux valider les contenus : chaque post ou carte blanche, c'est toi qui choisis.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">03</div>
+          <div class="how-step-name">Je publie, tu bosses</div>
+          <p class="how-step-desc">Les premières publications sortent généralement dans la semaine. Toi, tu te concentres sur ton métier.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MINI FAQ -->
+    <div class="mini-faq fade-in">
+      <div class="section-label">Avant de te décider</div>
+      <details class="mini-faq-item">
+        <summary>Qui valide les contenus avant publication&nbsp;?<span class="mini-faq-icon" aria-hidden="true">+</span></summary>
+        <p>Comme tu préfères. Certaines personnes valident chaque contenu avant publication, d'autres me laissent une autonomie complète. On définit ça ensemble dès le démarrage, et rien n'est figé si tu changes d'avis.</p>
+      </details>
+      <details class="mini-faq-item">
+        <summary>Je m'engage pour combien de temps&nbsp;?<span class="mini-faq-icon" aria-hidden="true">+</span></summary>
+        <p>Aucune durée imposée : les packs sont sans engagement. Tu peux résilier par email avec un mois de préavis, quand tu le souhaites.</p>
+      </details>
+      <details class="mini-faq-item">
+        <summary>Je peux changer de pack en cours de route&nbsp;?<span class="mini-faq-icon" aria-hidden="true">+</span></summary>
+        <p>Oui, tu peux monter ou descendre de formule à tout moment. Le changement s'applique dès le mois suivant.</p>
+      </details>
+      <details class="mini-faq-item">
+        <summary>En combien de temps ça démarre&nbsp;?<span class="mini-faq-icon" aria-hidden="true">+</span></summary>
+        <p>Après l'appel découverte et le choix de ta formule, je lance la création : les premières publications sortent généralement dans la semaine qui suit.</p>
+      </details>
+      <a href="faq.html" class="mini-faq-more">Toutes les questions fréquentes →</a>
     </div>
 
   </div>
@@ -1678,7 +1898,7 @@
   <div class="section-label">Prêt(e) à déléguer ?</div>
   <h2>On en parle autour<br>d'un café virtuel.</h2>
   <p>Un appel de 20 minutes, sans engagement, pour voir si on est fait pour travailler ensemble.</p>
-  <a href="mailto:contact@chloefortune.com?subject=Appel découverte" class="btn-primary" style="display: inline-flex;">
+  <a href="contact.html" class="btn-primary" style="display: inline-flex;">
     Réserver mon appel découverte
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
   </a>

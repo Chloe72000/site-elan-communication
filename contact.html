@@ -1407,6 +1407,32 @@
     color: var(--cream-soft);
     line-height: 1.7;
   }
+  /* PACK CHOISI (arrivée depuis la page des packs) */
+  .pack-choice {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background: var(--rose-glow);
+    border: 1px solid var(--border-bordeaux);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--cream-soft);
+  }
+  .pack-choice[hidden] { display: none; }
+  .pack-choice-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--cream);
+  }
+  .pack-choice-change {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: var(--rose-light);
+    text-decoration: underline;
+  }
 </style>
 </head>
 
@@ -1484,12 +1510,17 @@
     <div class="contact-grid">
 
       <div class="contact-main-card">
+        <div class="pack-choice" id="packChoice" hidden>
+          <span class="pack-choice-label">Tu t'intéresses au</span>
+          <strong class="pack-choice-name" id="packChoiceName"></strong>
+          <a href="elan-communication-packs.html#packs" class="pack-choice-change">changer</a>
+        </div>
         <div class="bonus-tag">✦ Appel découverte offert</div>
         <div class="contact-main-title">20 minutes, sans engagement.</div>
         <p class="contact-main-desc">Le meilleur moyen de savoir si on est fait pour travailler ensemble. On regarde ton besoin, tes objectifs, et je te propose la formule la plus adaptée — pack, coaching, ou une prestation ponctuelle.</p>
 
         <div class="contact-methods">
-          <a href="mailto:contact@chloefortune.com?subject=Prise de contact" class="contact-method">
+          <a href="mailto:contact@chloefortune.com?subject=Prise de contact" class="contact-method" id="contactEmailLink">
             <div class="contact-method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg></div>
             <div class="contact-method-text">
               <strong>Par email</strong>
@@ -1632,6 +1663,24 @@
     mobileMenuOverlay.addEventListener('click', closeMobileMenu);
     mobileMenuPanel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
   }
+
+  /* Pack choisi depuis la page des packs : contact.html?pack=elan */
+  (function () {
+    const packs = {
+      presence: { name: 'pack Présence', subject: 'Pack Présence' },
+      elan: { name: 'pack Élan', subject: 'Pack Élan' },
+      signature: { name: 'pack Signature', subject: 'Pack Signature' }
+    };
+    let key = '';
+    try { key = (new URLSearchParams(window.location.search).get('pack') || '').toLowerCase(); } catch (e) {}
+    const pack = packs[key];
+    if (!pack) return;
+    const box = document.getElementById('packChoice');
+    const nameEl = document.getElementById('packChoiceName');
+    const mail = document.getElementById('contactEmailLink');
+    if (box && nameEl) { nameEl.textContent = pack.name; box.hidden = false; }
+    if (mail) { mail.href = 'mailto:contact@chloefortune.com?subject=' + encodeURIComponent(pack.subject); }
+  })();
 </script>
 </body>
 </html>
