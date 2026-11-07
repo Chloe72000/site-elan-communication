@@ -1679,6 +1679,33 @@
     .footer-social-groups { flex-direction: column; gap: 0.75rem; }
   }
 </style>
+<style>
+  /* CHIFFRES CLES DU CAS CLIENT */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .stat-tile {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+  }
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-label { font-size: 0.95rem; color: var(--cream-soft); }
+  .stat-delta { font-size: 0.8rem; font-weight: 500; color: var(--rose-light); margin-top: 0.35rem; }
+  .stats-note { font-size: 0.78rem; color: var(--cream-muted); margin-top: 1rem; }
+  @media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+</style>
 </head>
 
 
@@ -1795,6 +1822,40 @@
         <span class="case-summary-zoom">Clique sur l'image pour l'agrandir</span>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RESULTATS TOUTATEAM (chiffres Instagram sur 30 jours) -->
+<!-- Pour mettre à jour : change les chiffres ci-dessous et la période indiquée dans la note. -->
+<section>
+  <div class="container fade-in visible">
+    <div class="section-label">Les résultats</div>
+    <h2 style="margin-bottom: 1rem;">En 30 jours,<br><em>+14&nbsp;% d'abonnés.</em></h2>
+    <p class="section-intro">Pour un compte de 205 abonnés, les contenus ont été vus plus de 12&nbsp;500 fois&nbsp;: les offres et les partenaires touchent bien plus de monde que la seule communauté.</p>
+    <div class="stats-grid">
+      <div class="stat-tile">
+        <div class="stat-value">12&nbsp;511</div>
+        <div class="stat-label">vues sur Instagram</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">+25</div>
+        <div class="stat-label">nouveaux abonnés</div>
+        <div class="stat-delta">+13,9&nbsp;%, soit 205 abonnés</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">161</div>
+        <div class="stat-label">interactions</div>
+        <div class="stat-delta">likes, commentaires, partages…</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">159</div>
+        <div class="stat-label">visites du profil</div>
+        <div class="stat-delta">dont 14 clics sur le lien en bio</div>
+      </div>
+    </div>
+    <p class="stats-note">Statistiques Instagram de Toutateam sur 30 jours, relevées début novembre 2026.</p>
   </div>
 </section>
 
