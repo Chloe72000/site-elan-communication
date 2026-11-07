@@ -1571,6 +1571,33 @@
     .footer-social-groups { flex-direction: column; gap: 0.75rem; }
   }
 </style>
+<style>
+  /* CHIFFRES CLES DU CAS CLIENT */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .stat-tile {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+  }
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-label { font-size: 0.95rem; color: var(--cream-soft); }
+  .stat-delta { font-size: 0.8rem; font-weight: 500; color: var(--rose-light); margin-top: 0.35rem; }
+  .stats-note { font-size: 0.78rem; color: var(--cream-muted); margin-top: 1rem; }
+  @media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+</style>
 </head>
 
 
@@ -1656,6 +1683,37 @@
       <p class="section-intro"><a href="audit.html" class="toggle-link">Audit de compte</a> suivi de <a href="contenu-ponctuel.html" class="toggle-link">création de contenu ponctuel</a> : tournage et montage de reels pour présenter le chef, l'équipe, les assiettes et l'ambiance du restaurant.</p>
     </div>
 
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RESULTATS LA TABLE DE LUC (chiffres d'un reel Instagram) -->
+<!-- Pour mettre à jour : change les chiffres ci-dessous. -->
+<section>
+  <div class="container fade-in visible">
+    <div class="section-label">Les résultats</div>
+    <h2 style="margin-bottom: 1rem;">Un reel vu<br><em>plus de 9&nbsp;000 fois.</em></h2>
+    <p class="section-intro">Plus de 350 interactions sur une seule vidéo&nbsp;: 287 j'aime, 12 commentaires, 20 republications et 33 partages. Quand les gens envoient une vidéo à leurs proches, c'est souvent pour proposer d'y aller ensemble.</p>
+    <div class="stats-grid">
+      <div class="stat-tile">
+        <div class="stat-value">9&nbsp;060</div>
+        <div class="stat-label">vues sur un seul reel</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">287</div>
+        <div class="stat-label">j'aime</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">33</div>
+        <div class="stat-label">partages en message privé</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">20</div>
+        <div class="stat-label">republications</div>
+      </div>
+    </div>
+    <p class="stats-note">Statistiques Instagram d'un reel réalisé pour La Table de Luc, relevées en novembre 2026.</p>
   </div>
 </section>
 

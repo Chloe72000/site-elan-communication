@@ -1564,6 +1564,33 @@
     .footer-social-groups { flex-direction: column; gap: 0.75rem; }
   }
 </style>
+<style>
+  /* CHIFFRES CLES DU CAS CLIENT */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .stat-tile {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+  }
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-label { font-size: 0.95rem; color: var(--cream-soft); }
+  .stat-delta { font-size: 0.8rem; font-weight: 500; color: var(--rose-light); margin-top: 0.35rem; }
+  .stats-note { font-size: 0.78rem; color: var(--cream-muted); margin-top: 1rem; }
+  @media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+</style>
 </head>
 
 
@@ -1645,6 +1672,37 @@
       <p class="section-intro"><a href="contenu-ponctuel.html" class="toggle-link">Création de contenu ponctuel</a> : tournage et montage de reels pour présenter le club, son ambiance et ses cours.</p>
     </div>
 
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RESULTATS YELLOW CLUB (chiffres Instagram de 3 reels) -->
+<!-- Pour mettre à jour : change les chiffres ci-dessous. -->
+<section>
+  <div class="container fade-in visible">
+    <div class="section-label">Les résultats</div>
+    <h2 style="margin-bottom: 1rem;">3 reels,<br><em>près de 38&nbsp;000 vues.</em></h2>
+    <p class="section-intro">Le reel le plus vu dépasse les 21&nbsp;000 vues et a été partagé 77 fois en message privé. Au total, plus de 1&nbsp;200 interactions sur les 3 vidéos.</p>
+    <div class="stats-grid">
+      <div class="stat-tile">
+        <div class="stat-value">37&nbsp;700</div>
+        <div class="stat-label">vues au total sur les 3 reels</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">1&nbsp;082</div>
+        <div class="stat-label">j'aime sur les 3 reels</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">102</div>
+        <div class="stat-label">partages en message privé</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">41</div>
+        <div class="stat-label">republications</div>
+      </div>
+    </div>
+    <p class="stats-note">Statistiques Instagram cumulées de 3 reels réalisés pour Yellow Club Pilates, relevées en novembre 2026.</p>
   </div>
 </section>
 
