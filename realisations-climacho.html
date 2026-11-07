@@ -10,12 +10,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Clima'Cho — Élan Communication">
 <meta property="og:description" content="Gestion des réseaux sociaux et création de contenu mensuelle pour Clima'Cho, installateur de climatisation réversible au Mans.">
-<meta property="og:image" content="og-image.png">
+<meta property="og:image" content="https://chloefortune.com/img/cas-client-climacho.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Clima'Cho — Élan Communication">
 <meta name="twitter:description" content="Gestion des réseaux sociaux et création de contenu mensuelle pour Clima'Cho, installateur de climatisation réversible au Mans.">
-<meta name="twitter:image" content="og-image.png">
+<meta name="twitter:image" content="https://chloefortune.com/img/cas-client-climacho.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1561,6 +1561,90 @@
     display: block;
   }
 </style>
+<style>
+  /* RESUME CAS CLIENT (visuel + texte) */
+  .case-summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .case-summary-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-bordeaux);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2rem;
+  }
+  .case-summary-label {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose-light);
+    margin-bottom: 0.6rem;
+  }
+  .case-summary-box p {
+    font-size: 0.98rem;
+    font-weight: 300;
+    color: var(--cream-soft);
+    line-height: 1.7;
+  }
+  .case-steps {
+    list-style: none;
+    counter-reset: step;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .case-steps li {
+    counter-increment: step;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    font-size: 0.98rem;
+    font-weight: 300;
+    color: var(--cream-soft);
+    line-height: 1.55;
+  }
+  .case-steps li::before {
+    content: counter(step);
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--rose);
+    color: var(--cream);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .case-steps li strong { color: var(--cream); font-weight: 600; }
+  .case-summary-visual {
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 24px 48px -20px rgba(0,0,0,0.6);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .case-summary-visual:hover { transform: translateY(-2px); border-color: var(--border-strong); }
+  .case-summary-visual img { display: block; width: 100%; height: auto; }
+  .case-summary-zoom {
+    display: block;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--cream-muted);
+    margin-top: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .case-summary { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
 </head>
 
 
@@ -1642,9 +1726,40 @@
       </div>
       <div class="section-label">Clima'Cho</div>
       <h2 style="margin-bottom: 1rem;">Installateur de clim<br>réversible, Le Mans.</h2>
-      <p class="section-intro">Gestion mensuelle des réseaux sociaux (Facebook et Instagram) dans le cadre du <a href="elan-communication-packs.html" class="toggle-link">pack Community Management</a> : un déplacement de 4h par mois chez le client pour tourner le contenu du mois suivant, puis montage et publication.</p>
+      <p class="section-intro">Gestion mensuelle des réseaux sociaux (Facebook et Instagram) dans le cadre du <a href="elan-communication-packs.html" class="toggle-link">pack Community Management</a> : 2h de tournage par mois chez le client pour préparer le contenu du mois suivant, puis montage et publication.</p>
     </div>
 
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RESUME DU CAS CLIENT CLIMA'CHO -->
+<section>
+  <div class="container fade-in visible">
+    <div class="section-label">En résumé</div>
+    <h2 style="margin-bottom: 2.5rem;">Partis <em>de zéro.</em></h2>
+    <div class="case-summary">
+      <div>
+        <div class="case-summary-box">
+          <div class="case-summary-label">Le point de départ</div>
+          <p>Aucune présence sur les réseaux sociaux. Tout était à construire&nbsp;: les pages, l'identité, les contenus et la communauté.</p>
+        </div>
+        <div class="case-summary-label">Ce que je fais</div>
+        <ol class="case-steps">
+          <li><span><strong>Création des pages</strong> Instagram et Facebook</span></li>
+          <li><span><strong>Un feed qui rassure</strong>&nbsp;: conseils, avis clients, chantiers</span></li>
+          <li><span><strong>8 posts par mois</strong>, tournés en 2 h</span></li>
+          <li><span><strong>En duo avec une agence mancelle</strong>&nbsp;: elle pilote les pubs Meta, je crée les visuels</span></li>
+        </ol>
+      </div>
+      <div>
+        <a href="img/cas-client-climacho.jpg" class="case-summary-visual" target="_blank" rel="noopener">
+          <img src="img/cas-client-climacho.jpg" alt="Cas client Clima'Cho × Élan : pages Instagram et Facebook créées de zéro" loading="lazy" width="1600" height="1200">
+        </a>
+        <span class="case-summary-zoom">Clique sur l'image pour l'agrandir</span>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -10,12 +10,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Art'im, immobilier d'entreprise au Mans — Élan Communication">
 <meta property="og:description" content="Accompagnement mensuel sur le pack Élan : le détail de la collaboration avec Art'im.">
-<meta property="og:image" content="og-image.png">
+<meta property="og:image" content="https://chloefortune.com/img/cas-client-artim.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Art'im, immobilier d'entreprise au Mans — Élan Communication">
 <meta name="twitter:description" content="Accompagnement mensuel sur le pack Élan : le détail de la collaboration avec Art'im.">
-<meta name="twitter:image" content="og-image.png">
+<meta name="twitter:image" content="https://chloefortune.com/img/cas-client-artim.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1576,6 +1576,90 @@
     display: block;
   }
 </style>
+<style>
+  /* RESUME CAS CLIENT (visuel + texte) */
+  .case-summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .case-summary-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-bordeaux);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2rem;
+  }
+  .case-summary-label {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose-light);
+    margin-bottom: 0.6rem;
+  }
+  .case-summary-box p {
+    font-size: 0.98rem;
+    font-weight: 300;
+    color: var(--cream-soft);
+    line-height: 1.7;
+  }
+  .case-steps {
+    list-style: none;
+    counter-reset: step;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .case-steps li {
+    counter-increment: step;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    font-size: 0.98rem;
+    font-weight: 300;
+    color: var(--cream-soft);
+    line-height: 1.55;
+  }
+  .case-steps li::before {
+    content: counter(step);
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--rose);
+    color: var(--cream);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .case-steps li strong { color: var(--cream); font-weight: 600; }
+  .case-summary-visual {
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 24px 48px -20px rgba(0,0,0,0.6);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .case-summary-visual:hover { transform: translateY(-2px); border-color: var(--border-strong); }
+  .case-summary-visual img { display: block; width: 100%; height: auto; }
+  .case-summary-zoom {
+    display: block;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--cream-muted);
+    margin-top: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .case-summary { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
 </head>
 
 
@@ -1661,6 +1745,37 @@
       <p class="section-intro">Accompagnement mensuel avec le <a href="elan-communication-packs.html" class="toggle-link">pack Élan</a> : gestion d'Instagram et de LinkedIn, avec un calendrier éditorial construit autour de trois piliers (l'équipe, les biens et le contenu éducatif) pour positionner l'agence comme experte auprès des chefs d'entreprise.</p>
     </div>
 
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RESUME DU CAS CLIENT ART'IM -->
+<section>
+  <div class="container fade-in visible">
+    <div class="section-label">En résumé</div>
+    <h2 style="margin-bottom: 2.5rem;">Avant / après&nbsp;:<br><em>la différence se voit.</em></h2>
+    <div class="case-summary">
+      <div>
+        <div class="case-summary-box">
+          <div class="case-summary-label">Le défi</div>
+          <p>Un secteur réputé sérieux, des visuels froids et peu de visages, alors que derrière il y a une équipe passionnée qui connaît Le Mans par cœur.</p>
+        </div>
+        <div class="case-summary-label">Ce que je fais</div>
+        <ol class="case-steps">
+          <li><span><strong>Une ligne éditoriale en 3 piliers</strong>&nbsp;: l'équipe, les biens, l'éducatif</span></li>
+          <li><span><strong>Instagram et LinkedIn</strong>, 2 posts par semaine</span></li>
+          <li><span><strong>Des tournages sur le terrain</strong>&nbsp;: visites de biens, portraits d'équipe</span></li>
+          <li><span><strong>Du contenu éducatif</strong> pour les chefs d'entreprise</span></li>
+        </ol>
+      </div>
+      <div>
+        <a href="img/cas-client-artim.jpg" class="case-summary-visual" target="_blank" rel="noopener">
+          <img src="img/cas-client-artim.jpg" alt="Cas client Art'im × Élan : feed Instagram d'Art'im avant et après l'accompagnement" loading="lazy" width="1600" height="1200">
+        </a>
+        <span class="case-summary-zoom">Clique sur l'image pour l'agrandir</span>
+      </div>
+    </div>
   </div>
 </section>
 

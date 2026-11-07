@@ -1491,6 +1491,48 @@
     font-size: 0.95rem;
     white-space: nowrap;
   }
+
+  /* APERCU CAS CLIENTS (accueil) */
+  .cases-teaser {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  .case-teaser-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  .case-teaser-card:hover { transform: translateY(-3px); }
+  .case-teaser-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6);
+  }
+  .case-teaser-name {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--cream);
+  }
+  @media (max-width: 768px) {
+    .cases-teaser {
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: 85%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 0.75rem;
+    }
+    .case-teaser-card { scroll-snap-align: start; }
+  }
 </style>
 
 <script type="application/ld+json">
@@ -1699,13 +1741,21 @@
     <div class="section-transition">Des mots, c'est bien. Des preuves, c'est mieux.</div>
     <div class="section-label">Réalisations</div>
     <h2 style="margin-bottom: 1.5rem;">Voir avant de croire.</h2>
-    <a href="realisations.html" class="realisations-teaser-card">
-      <div>
-        <div class="realisations-teaser-title">Avant / après : le feed de Camille</div>
-        <div class="realisations-teaser-desc">Audit, coaching, refonte visuelle et carrousels de contenu — un cas client complet, du diagnostic jusqu'au résultat publié.</div>
-      </div>
-      <span class="realisations-teaser-link">Voir le cas complet →</span>
-    </a>
+    <div class="cases-teaser">
+      <a href="realisations-artim.html" class="case-teaser-card">
+        <img src="img/cas-client-artim.jpg" alt="Cas client Art'im : feed Instagram avant et après" loading="lazy" width="1600" height="1200">
+        <span class="case-teaser-name">Art'im · Immobilier d'entreprise</span>
+      </a>
+      <a href="realisations-climacho.html" class="case-teaser-card">
+        <img src="img/cas-client-climacho.jpg" alt="Cas client Clima'Cho : pages Instagram et Facebook créées de zéro" loading="lazy" width="1200" height="900">
+        <span class="case-teaser-name">Clima'Cho · Climatisation</span>
+      </a>
+      <a href="realisations-toutateam.html" class="case-teaser-card">
+        <img src="img/cas-client-toutateam.jpg" alt="Cas client Toutateam : feed Instagram avant et après" loading="lazy" width="1200" height="900">
+        <span class="case-teaser-name">Toutateam · Avantages CSE</span>
+      </a>
+    </div>
+    <a href="realisations.html" class="realisations-teaser-link" style="display:inline-block; margin-top:1.75rem;">Voir tout le portfolio →</a>
   </div>
 </section>
 
