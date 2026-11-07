@@ -1492,6 +1492,92 @@
     white-space: nowrap;
   }
 
+  /* CARROUSEL D'AVIS */
+  .testi-track {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+  }
+  .testi-track::-webkit-scrollbar { display: none; }
+  .testi-slide {
+    flex: 0 0 calc((100% - 2 * 1.25rem) / 3);
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+  .testi-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 13.5rem;
+    overflow: hidden;
+    position: relative;
+  }
+  .testi-body .testimonial-text { margin: 0; }
+  .testi-slide.is-clamped .testi-body::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 3rem;
+    background: linear-gradient(to bottom, transparent, #2c0a1a);
+  }
+  .testi-track.has-open { align-items: flex-start; }
+  .testi-slide.is-open .testi-body { max-height: none; }
+  .testi-slide.is-open .testi-body::after { display: none; }
+  .testi-more {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #FF1DA8;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .testimonial-author { margin-top: auto; }
+  .testi-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.75rem;
+  }
+  .testi-nav {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-strong);
+    background: transparent;
+    color: var(--cream);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .testi-nav:hover { background: var(--rose); border-color: var(--rose); }
+  .testi-dots { display: flex; gap: 0.5rem; }
+  .testi-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: var(--border-strong);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .testi-dot.active { background: var(--rose); transform: scale(1.3); }
+  @media (max-width: 1000px) {
+    .testi-slide { flex-basis: calc((100% - 1.25rem) / 2); }
+  }
+  @media (max-width: 700px) {
+    .testi-slide { flex-basis: 88%; }
+  }
+
   /* APERCU CAS CLIENTS (accueil) */
   .cases-teaser {
     display: grid;
@@ -1765,19 +1851,80 @@
 <!-- TÉMOIGNAGES -->
 <section>
   <div class="container fade-in visible">
-    <div class="section-transition">Tu te demandes si ça marche vraiment ? Demande à celles qui ont testé.</div>
+    <div class="section-transition">Tu te demandes si ça marche vraiment ? Demande à celles et ceux qui ont testé.</div>
     <div class="section-label">Ils m'ont fait confiance</div>
     <h2 style="margin-bottom: 2rem;">Ce qu'ils en disent.</h2>
-    <div class="ponctuel-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-quote-mark">"</div>
-        <p class="testimonial-text">Merci beaucoup pour ce travail, l'audit est solide : le diagnostic de marque, la segmentation des cibles, les piliers éditoriaux et la feuille de route sont clairs, actionnables et bien pensés pour une petite équipe.</p>
-        <div class="testimonial-author">Amandine</div>
+    <div class="testi-carousel" id="testiCarousel">
+      <div class="testi-track" id="testiTrack">
+        <div class="testimonial-card testi-slide">
+          <div class="testimonial-quote-mark">"</div>
+          <div class="testi-body">
+            <p class="testimonial-text">Une très belle collaboration avec Chloé, une professionnelle passionnée, créative et à l'écoute&nbsp;!</p>
+            <p class="testimonial-text">Chloé m'a accompagné lors d'une intervention dans un lycée, où j'ai eu le plaisir d'échanger avec des jeunes autour de l'entrepreneuriat, de leur avenir et de mon parcours de dirigeant.</p>
+            <p class="testimonial-text">Elle a su capturer les moments forts de cette rencontre, puis réaliser un excellent travail de sélection, de découpage et de montage vidéo pour donner vie à ce moment de partage.</p>
+            <p class="testimonial-text">Au-delà de la création de contenu, Chloé est une véritable partenaire pour développer sa visibilité, valoriser son image et construire une stratégie de communication et de marketing de qualité.</p>
+            <p class="testimonial-text">C'est un plaisir de travailler avec des personnes aussi investies et professionnelles.</p>
+            <p class="testimonial-text">Une nouvelle campagne est déjà envisagée, et ce sera avec grand plaisir que nous collaborerons à nouveau&nbsp;!</p>
+            <p class="testimonial-text">Je recommande Chloé sans hésitation&nbsp;!</p>
+          </div>
+          <button type="button" class="testi-more" hidden>Lire la suite</button>
+          <div class="testimonial-author">Wilfried · WB Elec Service</div>
+        </div>
+        <div class="testimonial-card testi-slide">
+          <div class="testimonial-quote-mark">"</div>
+          <div class="testi-body">
+            <p class="testimonial-text">Un grand merci à Chloé pour son professionnalisme et sa créativité&nbsp;! Elle gère parfaitement la communication de mes réseaux sociaux. Réactive, à l'écoute et toujours de bon conseil. Je recommande vivement&nbsp;!</p>
+          </div>
+          <button type="button" class="testi-more" hidden>Lire la suite</button>
+          <div class="testimonial-author">Nolwan · Clima'Cho</div>
+        </div>
+        <div class="testimonial-card testi-slide">
+          <div class="testimonial-quote-mark">"</div>
+          <div class="testi-body">
+            <p class="testimonial-text">J'apprécie particulièrement le professionnalisme, la disponibilité et la qualité des échanges avec Chloé. Le fait de pouvoir se rencontrer en présentiel est également un vrai plus pour avancer efficacement et construire une communication qui me ressemble.</p>
+            <p class="testimonial-text">En quelques semaines, mes réseaux sociaux ont déjà pris une autre dimension, avec un rendu beaucoup plus professionnel et une ligne éditoriale plus structurée.</p>
+            <p class="testimonial-text">Une collaboration qui démarre très bien et qui laisse présager de belles réussites pour la suite&nbsp;!</p>
+          </div>
+          <button type="button" class="testi-more" hidden>Lire la suite</button>
+          <div class="testimonial-author">Yoann · Toutateam</div>
+        </div>
+        <div class="testimonial-card testi-slide">
+          <div class="testimonial-quote-mark">"</div>
+          <div class="testi-body">
+            <p class="testimonial-text">Nous travaillons avec Chloé depuis quelques mois&nbsp;: elle a tout de suite compris notre besoin, ses conseils sont au top et la gestion de nos réseaux sociaux est aux petits oignons&nbsp;!</p>
+          </div>
+          <button type="button" class="testi-more" hidden>Lire la suite</button>
+          <div class="testimonial-author">Brice · Art'im</div>
+        </div>
+        <div class="testimonial-card testi-slide">
+          <div class="testimonial-quote-mark">"</div>
+          <div class="testi-body">
+            <p class="testimonial-text">Un vrai plaisir que de travailler avec Chloé qui s'adapte à nos petites compétences, et sait rendre notre visibilité plus qu'espérée.</p>
+          </div>
+          <button type="button" class="testi-more" hidden>Lire la suite</button>
+          <div class="testimonial-author">Aymeric · Art'im</div>
+        </div>
+        <div class="testimonial-card testi-slide">
+          <div class="testimonial-quote-mark">"</div>
+          <div class="testi-body">
+            <p class="testimonial-text">Merci beaucoup pour ce travail, l'audit est solide : le diagnostic de marque, la segmentation des cibles, les piliers éditoriaux et la feuille de route sont clairs, actionnables et bien pensés pour une petite équipe.</p>
+          </div>
+          <button type="button" class="testi-more" hidden>Lire la suite</button>
+          <div class="testimonial-author">Amandine</div>
+        </div>
+        <div class="testimonial-card testi-slide">
+          <div class="testimonial-quote-mark">"</div>
+          <div class="testi-body">
+            <p class="testimonial-text">Merci Chloé pour tes conseils et ton œil expert qui me permettent d'enfin sauter dans le grand bain. Les templates que tu as proposés, c'est vraiment le feu.</p>
+          </div>
+          <button type="button" class="testi-more" hidden>Lire la suite</button>
+          <div class="testimonial-author">Camille</div>
+        </div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote-mark">"</div>
-        <p class="testimonial-text">Merci Chloé pour tes conseils et ton œil expert qui me permettent d'enfin sauter dans le grand bain. Les templates que tu as proposés, c'est vraiment le feu.</p>
-        <div class="testimonial-author">Camille</div>
+      <div class="testi-controls">
+        <button type="button" class="testi-nav" id="testiPrev" aria-label="Avis précédent">‹</button>
+        <div class="testi-dots" id="testiDots"></div>
+        <button type="button" class="testi-nav" id="testiNext" aria-label="Avis suivant">›</button>
       </div>
     </div>
   </div>
@@ -1929,6 +2076,86 @@
     mobileMenuOverlay.addEventListener('click', closeMobileMenu);
     mobileMenuPanel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
   }
+
+  /* CARROUSEL D'AVIS */
+  (function () {
+    const track = document.getElementById('testiTrack');
+    if (!track) return;
+    const slides = Array.from(track.querySelectorAll('.testi-slide'));
+    const dotsWrap = document.getElementById('testiDots');
+    const carousel = document.getElementById('testiCarousel');
+
+    // "Lire la suite" uniquement pour les avis trop longs
+    slides.forEach(function (slide) {
+      const body = slide.querySelector('.testi-body');
+      const btn = slide.querySelector('.testi-more');
+      if (body.scrollHeight > body.clientHeight + 4) {
+        slide.classList.add('is-clamped');
+        btn.hidden = false;
+        btn.addEventListener('click', function () {
+          const open = slide.classList.toggle('is-open');
+          btn.textContent = open ? 'Réduire' : 'Lire la suite';
+          track.classList.toggle('has-open', !!track.querySelector('.is-open'));
+          updateDots();
+        });
+      }
+    });
+
+    function perView() {
+      return Math.max(1, Math.round(track.clientWidth / slides[0].getBoundingClientRect().width));
+    }
+    function pageCount() { return Math.max(1, slides.length - perView() + 1); }
+    function currentIndex() {
+      const step = slides[1] ? slides[1].offsetLeft - slides[0].offsetLeft : 1;
+      return Math.round(track.scrollLeft / step);
+    }
+    function goTo(i) {
+      const n = pageCount();
+      i = ((i % n) + n) % n;
+      track.scrollTo({ left: slides[i].offsetLeft - slides[0].offsetLeft });
+    }
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      for (let i = 0; i < pageCount(); i++) {
+        const d = document.createElement('button');
+        d.type = 'button';
+        d.className = 'testi-dot';
+        d.setAttribute('aria-label', 'Aller à l\'avis ' + (i + 1));
+        d.addEventListener('click', function () { goTo(i); restart(); });
+        dotsWrap.appendChild(d);
+      }
+      updateDots();
+    }
+    function updateDots() {
+      const idx = Math.min(currentIndex(), pageCount() - 1);
+      dotsWrap.querySelectorAll('.testi-dot').forEach(function (d, i) { d.classList.toggle('active', i === idx); });
+    }
+
+    document.getElementById('testiPrev').addEventListener('click', function () { goTo(currentIndex() - 1); restart(); });
+    document.getElementById('testiNext').addEventListener('click', function () { goTo(currentIndex() + 1); restart(); });
+    track.addEventListener('scroll', function () { window.requestAnimationFrame(updateDots); }, { passive: true });
+    window.addEventListener('resize', buildDots);
+    buildDots();
+
+    // Défilement automatique (pause au survol, au toucher, ou si un avis est ouvert)
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let timer = null, paused = false;
+    function tick() {
+      if (paused || track.querySelector('.is-open')) return;
+      goTo(currentIndex() + 1);
+    }
+    function restart() {
+      if (reduce) return;
+      clearInterval(timer);
+      timer = setInterval(tick, 6000);
+    }
+    carousel.addEventListener('mouseenter', function () { paused = true; });
+    carousel.addEventListener('mouseleave', function () { paused = false; });
+    carousel.addEventListener('touchstart', function () { paused = true; }, { passive: true });
+    carousel.addEventListener('focusin', function () { paused = true; });
+    carousel.addEventListener('focusout', function () { paused = false; });
+    restart();
+  })();
 </script>
 </body>
 </html>
