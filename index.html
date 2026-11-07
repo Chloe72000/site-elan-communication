@@ -1492,6 +1492,34 @@
     white-space: nowrap;
   }
 
+  /* BANDEAU LOGOS CLIENTS */
+  section.clients-band { padding: 3rem 2rem 1rem; text-align: center; }
+  .clients-band-label {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 1.75rem;
+  }
+  .clients-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem 4rem;
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+  .client-logo { display: inline-flex; align-items: center; opacity: 0.75; transition: opacity 0.2s ease, transform 0.2s ease; }
+  a.client-logo:hover { opacity: 1; transform: translateY(-2px); }
+  .client-logo img { display: block; width: auto; max-width: 200px; }
+  @media (max-width: 700px) {
+    .clients-logos { gap: 2rem 2.5rem; }
+    .client-logo img { transform: scale(0.8); }
+  }
+
   /* CARROUSEL D'AVIS */
   .testi-track {
     display: flex;
@@ -1727,6 +1755,18 @@
     <div class="ticker-item">Community Management <span class="ticker-dot"></span> Coaching <span class="ticker-dot"></span> Contenu ponctuel <span class="ticker-dot"></span> Audit de compte <span class="ticker-dot"></span> Print <span class="ticker-dot"></span> Le Mans & Sarthe <span class="ticker-dot"></span> Artisans & Commerçants <span class="ticker-dot"></span></div>
   </div>
 </div>
+
+<!-- LOGOS CLIENTS -->
+<!-- Pour ajouter un client : copie une ligne <a> ou <span class="client-logo">, dépose son logo blanc (PNG transparent) dans img/logos/ et change le nom du fichier. -->
+<section class="clients-band">
+  <div class="clients-band-label">Ils me font confiance</div>
+  <div class="clients-logos">
+    <a href="realisations-artim.html" class="client-logo" aria-label="Art'im, voir le cas client"><img src="img/logos/logo-artim.png" alt="Art'im" style="height: 74px;" loading="lazy"></a>
+    <a href="realisations-climacho.html" class="client-logo" aria-label="Clima'Cho, voir le cas client"><img src="img/logos/logo-climacho.png" alt="Clima'Cho" style="height: 66px;" loading="lazy"></a>
+    <a href="realisations-toutateam.html" class="client-logo" aria-label="Toutateam, voir le cas client"><img src="img/logos/logo-toutateam.png" alt="Toutateam Sarthe &amp; Orne" style="height: 52px;" loading="lazy"></a>
+    <span class="client-logo"><img src="img/logos/logo-wbelec.png" alt="WB Elec Services" style="height: 68px;" loading="lazy"></span>
+  </div>
+</section>
 
 <!-- QUI JE SUIS -->
 <section>
