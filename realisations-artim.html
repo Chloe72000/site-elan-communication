@@ -1676,6 +1676,33 @@
     .footer-social-groups { flex-direction: column; gap: 0.75rem; }
   }
 </style>
+<style>
+  /* CHIFFRES CLES DU CAS CLIENT */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .stat-tile {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+  }
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-label { font-size: 0.95rem; color: var(--cream-soft); }
+  .stat-delta { font-size: 0.8rem; font-weight: 500; color: var(--rose-light); margin-top: 0.35rem; }
+  .stats-note { font-size: 0.78rem; color: var(--cream-muted); margin-top: 1rem; }
+  @media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+</style>
 </head>
 
 
@@ -1792,6 +1819,41 @@
         <span class="case-summary-zoom">Clique sur l'image pour l'agrandir</span>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RESULTATS ART'IM (chiffres Instagram sur 30 jours) -->
+<!-- Pour mettre à jour : change les chiffres ci-dessous et la période indiquée dans la note. -->
+<section>
+  <div class="container fade-in visible">
+    <div class="section-label">Les résultats</div>
+    <h2 style="margin-bottom: 1rem;">En 30 jours,<br><em>le compte décolle.</em></h2>
+    <p class="section-intro">Les reels représentent 60&nbsp;% des vues, et ils sont surtout vus par des personnes qui ne suivaient pas encore Art'im&nbsp;: l'agence se fait connaître bien au-delà de sa communauté.</p>
+    <div class="stats-grid">
+      <div class="stat-tile">
+        <div class="stat-value">13&nbsp;852</div>
+        <div class="stat-label">vues sur Instagram</div>
+        <div class="stat-delta">+65&nbsp;% sur la période précédente</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">5&nbsp;032</div>
+        <div class="stat-label">personnes touchées</div>
+        <div class="stat-delta">+83&nbsp;% sur la période précédente</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">284</div>
+        <div class="stat-label">visites du profil</div>
+        
+      </div>
+      <div class="stat-tile">
+        <div class="stat-value">+22</div>
+        <div class="stat-label">nouveaux abonnés</div>
+        <div class="stat-delta">448 abonnés au total</div>
+      </div>
+    </div>
+    <p class="stats-note">Statistiques Instagram d'Art'im du 8 octobre au 6 novembre 2026, comparées aux 30 jours précédents.</p>
   </div>
 </section>
 
