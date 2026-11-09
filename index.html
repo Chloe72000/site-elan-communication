@@ -38,7 +38,7 @@
     --font-body: 'DM Sans', sans-serif;
   }
 
-  html { scroll-behavior: smooth; overflow-x: hidden; }
+  html { scroll-behavior: smooth; overflow-x: hidden; overflow-x: clip; }
 
   body {
     background: var(--bg);
@@ -52,6 +52,7 @@
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    overflow-x: clip;
   }
 
   /* NAV */
@@ -2363,6 +2364,16 @@
         .finally(function () { btn.disabled = false; });
     });
   })();
+</script>
+<script>
+  /* ANCRES (ex. chloefortune.com/#checklist) : sur téléphone et dans le navigateur
+     d'Instagram, on redescend jusqu'à la section une fois la page entièrement chargée */
+  window.addEventListener('load', function () {
+    if (!location.hash) return;
+    var cible = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (!cible) return;
+    setTimeout(function () { cible.scrollIntoView({ behavior: 'instant', block: 'start' }); }, 200);
+  });
 </script>
 </body>
 </html>
